@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-gray: #4f4f4f;
+  --color-gray-2: #333;
+  --color-gray-3: #828282;
+  --color-gray-light: #bdbdbd;
+  --color-orange: #f2994a;
+  --color-white: #fff;
+
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: "Playfair Display", serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+.root {
+  width: 100%;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-areas:
+    "classicRecipe classicRecipe classicRecipe"
+    "ingredients ingredients timeService"
+    "instructions instructions ."
+    "footer footer footer";
+  grid-template-columns: 2fr 2fr 1.2fr;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 2rem;
+}
+
+/* CLASSICE RECIPE */
+.classicRecipe {
+  grid-area: classicRecipe;
+}
+
+.classicRecipe__title {
+  font-family: var(--font-secondary);
+  font-size: 48px;
+  margin-bottom: .625rem;
+}
+
+.classicRecipe__description {
+  width: 592px;
+  color: var(--color-gray);
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.classicRecipe__description::after{
+    content: url('../6dots.svg');
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.classicRecipe__image img {
+  max-width: 100%;
+}
+
+/* INGREDIENTS */
+.ingredients {
+  grid-area: ingredients;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ingredients__title {
+  color: var(--color-gray-2);
+  font-family: var(--font-secondary);
+  font-size: 24px;
+}
+
+/* INGREDIENTS - FIRST PART */
+.firstPart {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.firstPart__title {
+  color: var(--color-gray-2);
+  font-family: var(--font-secondary);
+  font-style: italic;
+  font-size: 18px;
+}
+
+.firstPart__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.firstPart__form div {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.firstPart__form div input{
+    cursor: pointer;
+}
+
+.firstPart__form div p {
+  color: var(--color-gray-2);
+}
+
+/* INGREDIENTS - SECOND PART */
+.secondPart {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.secondPart__title {
+  color: var(--color-gray-2);
+  font-family: var(--font-secondary);
+  font-style: italic;
+  font-size: 18px;
+}
+
+.secondPart__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.secondPart__form div {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+}
+
+.secondPart__form div p {
+  color: var(--color-gray-2);
+}
+
+/* TIME SERVICE */
+.timeService {
+  grid-area: timeService;
+}
+
+.timeService-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.timeService img {
+  width: 34px;
+  height: 34px;
+}
+
+.timeService__title {
+  display: flex;
+  gap: 1rem;
+}
+
+.timeService__times {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeService__times > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.timeService__times > div div p:first-child,
+.timeService__title > div p:first-child {
+  color: var(--color-gray-light);
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.timeService__times > div div p:last-child,
+.timeService__title > div p:last-child {
+  color: var(--color-orange);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.timeService__times > div div p:last-child {
+  color: var(--color-gray-2);
+}
+
+/* INSTRUCTIONS */
+.instructions {
+  grid-area: instructions;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.instructions__title {
+  color: var(--color-gray-2);
+  font-size: 24px;
+  font-family: var(--font-secondary);
+}
+
+.instructions__content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.instructions__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.instructions__number {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-orange);
+  display: flex;
+  place-content: center center;
+  border-radius: 6px;
+  color: var(--color-white);
+  font-size: 24px;
+  font-family: var(--font-secondary);
+}
+
+.instructions__item p {
+  flex: 1 1 0;
+  color: var(--color-gray-2);
+}
+
+/* INSTRUCTIONS PAGE ORIGIN*/
+.pageOrigin span,
+.pageOrigin a {
+  color: var(--color-gray-light);
+  text-decoration: none;
+  font-style: italic;
+}
+
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  color: var(--color-gray-3);
+  text-align: center;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    display: grid;
+    grid-template-areas:
+      "classicRecipe"
+      "timeService"
+      "ingredients"
+      "instructions"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 2rem;
+  }
+
+  .firstPart,
+  .secondPart,
+  .classicRecipe__description,
+  .instructions__content {
+    width: 100%;
+  }
+
+  .timeService__title {
+    align-self: flex-start;
+  }
+  .timeService-content {
+    padding: 0;
+    box-shadow: 0 0;
+  }
+
+  .timeService__times {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .classicRecipe__title {
+    font-size: 24px;
+  }
+
+  .timeService img {
+    width: 17px;
+    height: 17px;
+  }
+
+  .timeService__times > div div p:first-child,
+  .timeService__title > div p:first-child {
+    font-size: 8px;
+  }
+
+  .timeService__times > div div p:last-child,
+  .timeService__title > div p:last-child {
+    font-size: 10px;
+  }
+
+  .pageOrigin span{
+    display: block;
+  }
+
+  .pageOrigin{
+    font-size: 12px;
+  }
+}
